@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function LandingPage() {
   return (
     <>
@@ -13,12 +15,12 @@ export default function LandingPage() {
           management with Claire.
         </p>
         <div className="flex gap-2">
-          <a
+          <Link
             href=""
             className="flex h-8 w-[6.25rem] items-center justify-center rounded-2xl bg-secondary text-center text-sm text-white"
           >
             <span>Get Started</span>
-          </a>
+          </Link>
           <a
             href="https://github.com/101KiddChang010/mhacks-hackathon"
             className="flex h-8 w-[6.25rem] items-center justify-center rounded-2xl bg-primary text-center text-sm text-white"
