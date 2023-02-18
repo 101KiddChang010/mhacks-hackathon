@@ -76,36 +76,46 @@ export default function LandingPage() {
             assistance.
           </p>
         </div>
-        <div className="mt-[4.688rem] mb-[4.688rem]">
+        <div className="mt-[4.688rem] mb-[3rem]">
           <h3 className="flex justify-center text-2xl font-bold text-[#474750]">
             Powered By:
           </h3>
           <div className="mt-5 flex gap-[5.313rem]">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
-              className="max-h-[4.375rem]"
-              alt=""
-            />
-            <img
-              src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
-              className="max-h-[4.375rem]"
-              alt=""
-            />
-            <img
-              src="https://next-auth.js.org/img/logo/logo-sm.png"
-              alt=""
-              className="max-h-[4.375rem]"
-            />
-            <img
-              src="https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png"
-              className="max-h-[4.375rem]"
-              alt=""
-            />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
-              className="max-h-[4.375rem]"
-              alt=""
-            />
+            <a href="https://openai.com">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
+                className="max-h-[4.375rem]"
+                alt=""
+              />
+            </a>
+            <a href="https://git-scm.com">
+              <img
+                src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
+                className="max-h-[4.375rem]"
+                alt=""
+              />
+            </a>
+            <a href="https://next-auth.js.org">
+              <img
+                src="https://next-auth.js.org/img/logo/logo-sm.png"
+                alt=""
+                className="max-h-[4.375rem]"
+              />
+            </a>
+            <a href="https://nextjs.org">
+              <img
+                src="https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png"
+                className="max-h-[4.375rem]"
+                alt=""
+              />
+            </a>
+            <a href="https://reactjs.org">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
+                className="max-h-[4.375rem]"
+                alt=""
+              />
+            </a>
           </div>
         </div>
       </div>
