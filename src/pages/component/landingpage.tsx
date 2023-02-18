@@ -90,13 +90,6 @@ export default function LandingPage() {
                 alt=""
               />
             </a>
-            <a href="https://git-scm.com">
-              <img
-                src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
-                className="max-h-[4.375rem]"
-                alt=""
-              />
-            </a>
             <a href="https://next-auth.js.org">
               <img
                 src="https://next-auth.js.org/img/logo/logo-sm.png"
@@ -114,6 +107,13 @@ export default function LandingPage() {
             <a href="https://reactjs.org">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
+                className="max-h-[4.375rem]"
+                alt=""
+              />
+            </a>
+            <a href="https://www.mongodb.com">
+              <img
+                src="https://www.svgrepo.com/show/331488/mongodb.svg"
                 className="max-h-[4.375rem]"
                 alt=""
               />
