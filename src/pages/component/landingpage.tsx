@@ -27,7 +27,7 @@ export default function LandingPage() {
           </a>
         </div>
         <img src="showcase.png" alt="" className="my-8" />
-        <div className="mt-[4.688rem] mb-[3.125rem]">
+        <div className="mt-[4.688rem]">
           <h2 className="text-2xl font-bold tracking-[.12rem] text-secondary">
             WHAT IS CLAIRE
           </h2>
@@ -43,7 +43,7 @@ export default function LandingPage() {
             efficient way of managing your healthcare.
           </p>
         </div>
-        <div className="">
+        <div className="mt-[4.688rem]">
           <h2 className="text-2xl font-bold tracking-[.12rem] text-secondary">
             HOW CLAIRE WORKS
           </h2>
@@ -75,6 +75,38 @@ export default function LandingPage() {
             industry and transforming the way people think about medical
             assistance.
           </p>
+        </div>
+        <div className="mt-[4.688rem] mb-[4.688rem]">
+          <h3 className="flex justify-center text-2xl font-bold text-[#474750]">
+            Powered By:
+          </h3>
+          <div className="mt-5 flex gap-[5.313rem]">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
+              className="max-h-[4.375rem]"
+              alt=""
+            />
+            <img
+              src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
+              className="max-h-[4.375rem]"
+              alt=""
+            />
+            <img
+              src="https://next-auth.js.org/img/logo/logo-sm.png"
+              alt=""
+              className="max-h-[4.375rem]"
+            />
+            <img
+              src="https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png"
+              className="max-h-[4.375rem]"
+              alt=""
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
+              className="max-h-[4.375rem]"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </>
