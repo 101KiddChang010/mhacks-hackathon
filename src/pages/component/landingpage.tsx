@@ -16,7 +16,7 @@ export default function LandingPage() {
         </p>
         <div className="flex gap-2">
           <Link
-            href=""
+            href="../mainapp"
             className="flex h-8 w-[6.25rem] items-center justify-center rounded-2xl bg-secondary text-center text-sm text-white"
           >
             <span>Get Started</span>
