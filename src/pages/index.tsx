@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <div className="my-0 mx-auto flex max-w-screen-lg flex-1 flex-col items-center justify-center">
         <LandingPage />
       </div>
-      <Footer />
+      <Footer color="text-[#323232]" />
     </>
   );
 };

@@ -18,7 +18,7 @@ const Mainapp: NextPage = () => {
       <div className="bg-chatbox-dark">
         <ChatBox />
         <InputBox />
-        <Footer />
+        <Footer color="text-white" />
       </div>
     </>
   );
