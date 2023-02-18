@@ -42,4 +42,4 @@ yarn-error.log*
 *.tsbuildinfo
 
 # doctor.py 
-.\doctor.py
+doctor.py
