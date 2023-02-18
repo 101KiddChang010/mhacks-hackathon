@@ -5,7 +5,7 @@ import Navbar from "./component/navbar";
 
 import { api } from "../utils/api";
 
-const MainApp: NextPage = () => {
+const Mainapp: NextPage = () => {
   return (
     <>
       <HtmlHead />
@@ -13,3 +13,5 @@ const MainApp: NextPage = () => {
     </>
   );
 };
+
+export default Mainapp;
