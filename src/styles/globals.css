@@ -5,19 +5,12 @@
 @layer base {
   html {
     @apply font-noto-sans;
-    /* font: "noto-sans"; */
-  }
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: red;
   }
   #__next,
   body {
-    width: 100vw;
-    height: 100vh;
+    @apply h-[100vh] w-[100vw] bg-background;
   }
   #__next {
-    display: flex;
-    flex-direction: column;
+    @apply flex flex-col;
   }
 }

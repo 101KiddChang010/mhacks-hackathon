@@ -11,7 +11,7 @@ const Mainapp: NextPage = () => {
       <Navbar />
       <AiArt />
       <div className="flex flex-1 flex-col overflow-y-auto bg-chatbox-dark">
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-300">
           <ChatBox
             text={
               "Hello Claire, I am feeling a bit tired lately and feel weak in general. What do you recommend me to do?"
