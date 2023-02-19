@@ -35,7 +35,7 @@ const Auth = (props: any) => {
       ) : (
         <button
           onClick={() => void signIn()}
-          className="h-8 w-20 rounded-2xl bg-secondary text-center text-white"
+          className="h-8 w-20 rounded-2xl bg-secondary text-center text-sm text-white duration-300 hover:scale-105"
         >
           Log In
         </button>

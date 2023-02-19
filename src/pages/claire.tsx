@@ -78,12 +78,12 @@ export default Claire;
 const AiArt: React.FC = () => {
   return (
     <>
-      <div className="flex h-[18.75rem] justify-center align-middle">
+      <div className="flex justify-center py-1 align-middle">
         <div className="flex flex-col justify-center text-center">
           <img
             src="claire-smile.png"
             alt="Claire AI Art Made by CyanLolly"
-            className="'h-[14.5rem] w-[11.875rem] drop-shadow-[0rem_0.125rem_0.25rem_rgba(0,0,0,0.12)]"
+            className="h-[10rem] w-auto drop-shadow-[0rem_0.125rem_0.25rem_rgba(0,0,0,0.12)] sm:h-[13.125rem]"
           />
           <h3 className="text-2xl font-medium text-secondary drop-shadow-[0rem_0.125rem_0.25rem_rgba(0,0,0,0.25)]">
             Cl<span className="text-primary">ai</span>re
