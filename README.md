@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/101KiddChang010/mhacks-hackathon">
-    <img src="./public/showcase.PNG" alt="Photo of website" width="400" height="300">
+    <img src="./public/claireThumbnailv2.jpg" alt="Photo of website" width="700">
   </a>
 
 <h3 align="center">CuraAI</h3>
