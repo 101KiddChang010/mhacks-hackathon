@@ -12,11 +12,11 @@ const Claire: NextPage = () => {
 
   // Redirects user to Index Page if not logged in.
   if (!sessionData?.user) {
-    // alert("You have to be logged in to access the AI");
-    // router.push("/");
-    router.push(
-      "http://localhost:3000/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F"
-    );
+    alert("You have to be logged in to access the AI");
+    router.push("/");
+    // router.push(
+    //   "/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fen"
+    // );
     return null;
   }
 
