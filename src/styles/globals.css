@@ -8,7 +8,7 @@
   }
   #__next,
   body {
-    @apply h-[100vh] w-[100vw] bg-background;
+    @apply h-[100vh] w-[100vw] overflow-y-auto bg-background scrollbar-thin scrollbar-thumb-slate-300;
   }
   #__next {
     @apply flex flex-col;
