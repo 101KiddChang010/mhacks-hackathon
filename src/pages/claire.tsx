@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react";
 //import { useRouter } from "next/router";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { type NextPage } from "next";
 import HtmlHead from "./component/htmlhead";
 import Navbar from "./component/navbar";
@@ -9,38 +9,41 @@ import Footer from "./component/footer";
 
 const Claire: NextPage = () => {
   const { data: sessionData } = useSession();
-
   const [userInput, setUserInput] = useState("");
-  const [response, setResponse] = useState("");
+  const [result, setResult] = useState("");
+  const [previousResponses, setPreviousResponses] = useState<string[]>([]);
 
-  const openAIKey = process.env.OPENAI_API_KEY;
-  const clairePrompt = process.env.CLAIRE_PROMPT;
-
-  const APIBody = {
-    model: "text-davinci-003",
-    prompt: process.env.CLAIRE_PROMPT,
-    max_tokens: 7,
-    temperature: 0.01,
-  };
-
-  async function callOpenAIAPI(params: any) {
-    console.log("Calling the OpenAI API");
-    await fetch("https://api.openai.com/v1/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization:
-          "Bearer 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",
-        // Authorization: "Bearer " + process.env.OPENAI_API_KEY,
-      },
-      body: JSON.stringify(APIBody),
-    })
-      .then((data) => {
-        return data.json();
-      })
-      .then((data) => {
-        console.log(data);
+  async function onSubmit(event: any) {
+    event.preventDefault();
+    setPreviousResponses((prev) => [...prev, "Human: " + userInput]);
+    try {
+      const response = await fetch("/api/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          history: previousResponses.join("\n"),
+          input: userInput,
+        }),
       });
+
+      const data = await response.json();
+      if (response.status !== 200) {
+        throw (
+          data.error ||
+          new Error(`Request failed with status ${response.status}`)
+        );
+      }
+
+      console.log("prevResponses", previousResponses);
+      setResult(data.result);
+      setUserInput("");
+      setPreviousResponses((prev) => [...prev, "Claire: " + data.result]);
+    } catch (error: any) {
+      // console.error(error);
+      // alert(error.message);
+    }
   }
 
   if (!sessionData?.user) {
@@ -66,11 +69,6 @@ const Claire: NextPage = () => {
     );
   }
 
-  console.log(userInput);
-  // console.log("Process Env:", process.env);
-  console.log("Prompt:", process.env.CLAIRE_PROMPT);
-  console.log("KEY:", process.env.OPENAI_API_KEY);
-
   return (
     <>
       <HtmlHead />
@@ -78,31 +76,28 @@ const Claire: NextPage = () => {
       <AiArt />
       <div className="flex flex-1 flex-col overflow-y-auto bg-chatbox-dark">
         <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-100">
-          <ChatBox text={response} />
-          {/* <ChatBox
-            text={
-              "Hello Claire, I am feeling a bit tired lately and feel weak in general. What do you recommend me to do?"
-            }
-          />
-          <ChatBox
-            name={"Claire"}
-            text={
-              "I recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensure you are getting all the necessary nutrients. Exercise can also help boost your energy levels."
-            }
-          /> */}
+          {previousResponses.map((text) => (
+            <ChatBox
+              text={
+                text.slice(0, 7) == "Claire:" ? text.slice(7) : text.slice(6)
+              }
+              name={text.slice(0, 7) == "Claire:" ? "Claire" : null}
+            />
+          ))}
         </div>
         <form
-          action=""
+          onSubmit={onSubmit}
           className="mx-auto mt-5 flex h-[2.75rem] w-[50rem] items-center justify-center overflow-hidden rounded-2xl rounded-l-xl bg-[#5D5F70] px-4 align-middle drop-shadow-[0rem_0.25rem_0.25rem_rgba(0,0,0,0.25)]"
         >
           <input
+            value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
             type="text"
             className="flex-1 bg-[#5D5F70] text-white focus:outline-none"
           />
           <button
             type="button"
-            onClick={callOpenAIAPI}
+            onClick={onSubmit}
             className=" bg-red-500fa-xl h-[100%] w-[2.5rem] text-center text-xl duration-300 hover:scale-110"
           >
             <i className="fa-regular fa-paper-plane text-white"></i>
@@ -134,23 +129,3 @@ const AiArt: React.FC = () => {
     </>
   );
 };
-
-// const InputBox: React.FC = () => {
-//   return (
-//     <>
-//       <form
-//         action=""
-//         className="mx-auto mt-5 flex h-[2.75rem] w-[50rem] items-center justify-center overflow-hidden rounded-2xl rounded-l-xl bg-[#5D5F70] px-4 align-middle drop-shadow-[0rem_0.25rem_0.25rem_rgba(0,0,0,0.25)]"
-//       >
-//         <input
-//           onChange={(e) => setUserInput(e.target)}
-//           type="text"
-//           className="flex-1 bg-[#5D5F70] text-white focus:outline-none"
-//         />
-//         <button className=" bg-red-500fa-xl h-[100%] w-[2.5rem] text-center text-xl duration-300 hover:scale-110">
-//           <i className="fa-regular fa-paper-plane text-white"></i>
-//         </button>
-//       </form>
-//     </>
-//   );
-// };

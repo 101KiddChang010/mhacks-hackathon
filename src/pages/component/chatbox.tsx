@@ -1,6 +1,6 @@
 interface chatInputs {
-  name?: string;
-  text: string;
+  name?: string | null | undefined;
+  text: string | null | undefined;
 }
 
 const ChatBox: React.FC<chatInputs> = (props) => {
