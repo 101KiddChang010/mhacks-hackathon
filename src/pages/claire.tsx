@@ -1,5 +1,6 @@
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
+//import { useRouter } from "next/router";
+import { useState } from "react";
 import { type NextPage } from "next";
 import HtmlHead from "./component/htmlhead";
 import Navbar from "./component/navbar";
@@ -8,34 +9,41 @@ import Footer from "./component/footer";
 
 const Claire: NextPage = () => {
   const { data: sessionData } = useSession();
-  //const router = useRouter();
 
-  const { Configuration, OpenAIApi } = require("openai");
+  const [userInput, setUserInput] = useState("");
+  const [response, setResponse] = useState("");
 
-  const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
-  });
-  const openai = new OpenAIApi(configuration);
+  const openAIKey = process.env.OPENAI_API_KEY;
+  const clairePrompt = process.env.CLAIRE_PROMPT;
 
-  const response = await openai.createCompletion({
+  const APIBody = {
     model: "text-davinci-003",
     prompt: process.env.CLAIRE_PROMPT,
+    max_tokens: 7,
     temperature: 0.01,
-    max_tokens: 150,
-    top_p: 1,
-    frequency_penalty: 0.0,
-    presence_penalty: 0.6,
-    stop: [" Human:", " AI:"],
-  });
+  };
 
-  console.log("Response:", response);
+  async function callOpenAIAPI(params: any) {
+    console.log("Calling the OpenAI API");
+    await fetch("https://api.openai.com/v1/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer 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",
+        // Authorization: "Bearer " + process.env.OPENAI_API_KEY,
+      },
+      body: JSON.stringify(APIBody),
+    })
+      .then((data) => {
+        return data.json();
+      })
+      .then((data) => {
+        console.log(data);
+      });
+  }
 
-  //if (!sessionData?.user) {
-    // Redirects user to Index Page if not logged in.
-    // alert("You have to be logged in to access the AI");
-    // router.push("/");
-    //router.push("/api/auth/signin");
-    //return null;
+  if (!sessionData?.user) {
     return (
       <>
         <HtmlHead />
@@ -58,6 +66,11 @@ const Claire: NextPage = () => {
     );
   }
 
+  console.log(userInput);
+  // console.log("Process Env:", process.env);
+  console.log("Prompt:", process.env.CLAIRE_PROMPT);
+  console.log("KEY:", process.env.OPENAI_API_KEY);
+
   return (
     <>
       <HtmlHead />
@@ -65,7 +78,8 @@ const Claire: NextPage = () => {
       <AiArt />
       <div className="flex flex-1 flex-col overflow-y-auto bg-chatbox-dark">
         <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-100">
-          <ChatBox
+          <ChatBox text={response} />
+          {/* <ChatBox
             text={
               "Hello Claire, I am feeling a bit tired lately and feel weak in general. What do you recommend me to do?"
             }
@@ -75,31 +89,25 @@ const Claire: NextPage = () => {
             text={
               "I recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensure you are getting all the necessary nutrients. Exercise can also help boost your energy levels."
             }
-          />
-          <ChatBox
-            text={
-              "Hello Claire, I am feeling a bit tired lately and feel weak in general. What do you recommend me to do?"
-            }
-          />
-          <ChatBox
-            name={"Claire"}
-            text={
-              "I recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to enI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensursure you are getting all the necessary nutrients. Exercise can also help boost your energy levels."
-            }
-          />
-          <ChatBox
-            text={
-              "I recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to enI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensursure you are getting all the necessary nutrients. Exercise can also help boost your energy levels."
-            }
-          />
-          <ChatBox
-            name={"Claire"}
-            text={
-              "I recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to enI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensurI recommend that you get plenty of rest, stay hydrated, and eat a balanced diet. Additionally, you may want to consider taking a multivitamin or supplement to ensursure you are getting all the necessary nutrients. Exercise can also help boost your energy levels."
-            }
-          />
+          /> */}
         </div>
-        <InputBox />
+        <form
+          action=""
+          className="mx-auto mt-5 flex h-[2.75rem] w-[50rem] items-center justify-center overflow-hidden rounded-2xl rounded-l-xl bg-[#5D5F70] px-4 align-middle drop-shadow-[0rem_0.25rem_0.25rem_rgba(0,0,0,0.25)]"
+        >
+          <input
+            onChange={(e) => setUserInput(e.target.value)}
+            type="text"
+            className="flex-1 bg-[#5D5F70] text-white focus:outline-none"
+          />
+          <button
+            type="button"
+            onClick={callOpenAIAPI}
+            className=" bg-red-500fa-xl h-[100%] w-[2.5rem] text-center text-xl duration-300 hover:scale-110"
+          >
+            <i className="fa-regular fa-paper-plane text-white"></i>
+          </button>
+        </form>
         <Footer color="text-white" />
       </div>
     </>
@@ -127,21 +135,22 @@ const AiArt: React.FC = () => {
   );
 };
 
-const InputBox: React.FC = () => {
-  return (
-    <>
-      <form
-        action=""
-        className="mx-auto mt-5 flex h-[2.75rem] w-[50rem] items-center justify-center overflow-hidden rounded-2xl rounded-l-xl bg-[#5D5F70] px-4 align-middle drop-shadow-[0rem_0.25rem_0.25rem_rgba(0,0,0,0.25)]"
-      >
-        <input
-          type="text"
-          className="flex-1 bg-[#5D5F70] text-white focus:outline-none"
-        />
-        <button className=" bg-red-500fa-xl h-[100%] w-[2.5rem] text-center text-xl duration-300 hover:scale-110">
-          <i className="fa-regular fa-paper-plane text-white"></i>
-        </button>
-      </form>
-    </>
-  );
-};
+// const InputBox: React.FC = () => {
+//   return (
+//     <>
+//       <form
+//         action=""
+//         className="mx-auto mt-5 flex h-[2.75rem] w-[50rem] items-center justify-center overflow-hidden rounded-2xl rounded-l-xl bg-[#5D5F70] px-4 align-middle drop-shadow-[0rem_0.25rem_0.25rem_rgba(0,0,0,0.25)]"
+//       >
+//         <input
+//           onChange={(e) => setUserInput(e.target)}
+//           type="text"
+//           className="flex-1 bg-[#5D5F70] text-white focus:outline-none"
+//         />
+//         <button className=" bg-red-500fa-xl h-[100%] w-[2.5rem] text-center text-xl duration-300 hover:scale-110">
+//           <i className="fa-regular fa-paper-plane text-white"></i>
+//         </button>
+//       </form>
+//     </>
+//   );
+// };
