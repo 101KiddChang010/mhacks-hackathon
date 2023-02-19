@@ -129,25 +129,3 @@ const AiArt: React.FC = () => {
     </>
   );
 };
-<<<<<<< HEAD
-
-const InputBox: React.FC = () => {
-  return (
-    <>
-      <form
-        action=""
-        className="mx-auto mt-5 flex h-[2.75rem] w-[90vw] items-center justify-center overflow-hidden rounded-2xl rounded-l-xl bg-[#5D5F70] px-4 align-middle drop-shadow-[0rem_0.25rem_0.25rem_rgba(0,0,0,0.25)] lg:w-[60vw]"
-      >
-        <input
-          type="text"
-          className="flex-1 bg-[#5D5F70] text-white focus:outline-none"
-        />
-        <button className=" bg-red-500fa-xl h-[100%] w-[2.5rem] text-center text-xl duration-300 hover:scale-110">
-          <i className="fa-regular fa-paper-plane text-white"></i>
-        </button>
-      </form>
-    </>
-  );
-};
-=======
->>>>>>> 0a32fec90820dfd571198eb1d4a7bf3250b5b118
