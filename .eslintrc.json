@@ -17,6 +17,7 @@
   "plugins": ["@typescript-eslint"],
   "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
   "rules": {
+    "ignorePatterns": ["temp.js", "**/vendor/*.js"],
     "@typescript-eslint/consistent-type-imports": "off"
   }
 }
