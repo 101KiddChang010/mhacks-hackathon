@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         primary: "#1A446A",
         secondary: "#22223B",
+        background: "#F8F3F1",
         "chatbox-dark": "#4A4E69",
         "chatbox-light": "#5A6088",
       },
@@ -14,5 +15,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };
