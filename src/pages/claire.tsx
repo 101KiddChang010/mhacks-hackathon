@@ -8,9 +8,29 @@ import Footer from "./component/footer";
 
 const Claire: NextPage = () => {
   const { data: sessionData } = useSession();
-  const router = useRouter();
+  //const router = useRouter();
 
-  if (!sessionData?.user) {
+  const { Configuration, OpenAIApi } = require("openai");
+
+  const configuration = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY,
+  });
+  const openai = new OpenAIApi(configuration);
+
+  const response = await openai.createCompletion({
+    model: "text-davinci-003",
+    prompt: process.env.CLAIRE_PROMPT,
+    temperature: 0.01,
+    max_tokens: 150,
+    top_p: 1,
+    frequency_penalty: 0.0,
+    presence_penalty: 0.6,
+    stop: [" Human:", " AI:"],
+  });
+
+  console.log("Response:", response);
+
+  //if (!sessionData?.user) {
     // Redirects user to Index Page if not logged in.
     // alert("You have to be logged in to access the AI");
     // router.push("/");
@@ -20,7 +40,20 @@ const Claire: NextPage = () => {
       <>
         <HtmlHead />
         <Navbar />
-        <h2>You Need To Log In To Access Claire</h2>
+        <div className="align-center absolute top-[50%] right-[50%] flex translate-x-[50%] translate-y-[-50%] flex-col items-center justify-center">
+          <img
+            src="/claire-oof.png"
+            className="max-h-[18rem] max-w-[11.875rem]"
+          ></img>
+          <div className="flex flex-col">
+            <h2 className="flex items-center justify-center text-center text-[4rem] font-bold text-primary lg:text-[6rem]">
+              Sorry!
+            </h2>
+            <h2 className="flex items-center justify-center text-center font-bold text-secondary sm:text-lg lg:text-xl">
+              To Access Claire You First Have To Log In.
+            </h2>
+          </div>
+        </div>
       </>
     );
   }
