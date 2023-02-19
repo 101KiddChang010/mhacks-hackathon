@@ -20,7 +20,7 @@ const Home: NextPage = () => {
             Meet Cl
             <span className="text-primary">ai</span>re
           </h1>
-          <p className="my-4 w-[90vw] text-center text-xs sm:text-2xl">
+          <p className="my-4 w-[90vw] text-center text-xs sm:text-2xl lg:w-[56.5rem]">
             Your personalized AI medical assistant. Get accurate medical advice,
             quick diagnoses, and access to healthcare providers. Say goodbye to
             long wait times and hello to convenient healthcare assistance with
@@ -49,14 +49,14 @@ const Home: NextPage = () => {
             <img
               src="showcase.jpg"
               alt="Image showcasing interaction with Claire"
-              className="relative z-[1] mt-[10rem] h-auto w-[78vw] shadow-2xl"
+              className="relative z-[1] mt-[10rem] h-auto w-[78vw] shadow-2xl lg:w-[48.75rem]"
             />
           </div>
           <div className="mt-[4.688rem]">
             <h2 className="text-xl font-bold tracking-[.12rem] text-secondary sm:text-2xl">
               WHO IS CLAIRE
             </h2>
-            <p className="mt-[.5rem] w-[90vw] text-sm font-medium max-sm:text-xs">
+            <p className="mt-[.5rem] w-[90vw] text-sm font-medium max-sm:text-xs lg:w-[62.5rem]">
               Claire is an innovative medical assistant AI that uses the latest
               breakthroughs in natural language processing and artificial
               intelligence to help you take charge of your health. She's
@@ -71,7 +71,7 @@ const Home: NextPage = () => {
             <h2 className="text-xl font-bold tracking-[.12rem] text-secondary sm:text-2xl">
               HOW CLAIRE WORKS
             </h2>
-            <p className="mt-[.5rem] w-[90vw] text-sm font-medium max-sm:text-xs">
+            <p className="mt-[.5rem] w-[90vw] text-sm font-medium max-sm:text-xs lg:w-[62.5rem]">
               Developed with OpenAI's GPT-3 language model, Claire's powerful
               capabilities are made possible by GPT-3's advanced machine
               learning algorithms. As she learns to adapt and interact by
