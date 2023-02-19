@@ -94,7 +94,7 @@ const InputBox: React.FC = () => {
     <>
       <form
         action=""
-        className="mx-auto mt-5 flex h-[2.75rem] w-[90vw] items-center justify-center overflow-hidden rounded-2xl rounded-l-xl bg-[#5D5F70] px-4 align-middle drop-shadow-[0rem_0.25rem_0.25rem_rgba(0,0,0,0.25)]"
+        className="mx-auto mt-5 flex h-[2.75rem] w-[90vw] items-center justify-center overflow-hidden rounded-2xl rounded-l-xl bg-[#5D5F70] px-4 align-middle drop-shadow-[0rem_0.25rem_0.25rem_rgba(0,0,0,0.25)] lg:w-[60vw]"
       >
         <input
           type="text"

@@ -12,10 +12,10 @@ const ChatBox: React.FC<chatInputs> = (props) => {
         }
       >
         <div className="mx-auto my-auto flex w-[90vw] lg:w-[60vw]">
-          <p className="w-[3.125rem] text-white">
+          <p className="w-[3.125rem] text-xs text-white">
             {props?.name ? props.name + ": " : null}
           </p>
-          <p className="flex-1 pl-5 text-white">{props.text}</p>
+          <p className="flex-1 pl-5 text-xs text-white">{props.text}</p>
         </div>
       </div>
     </>
