@@ -11,7 +11,7 @@ const Mainapp: NextPage = () => {
       <Navbar />
       <AiArt />
       <div className="flex flex-1 flex-col overflow-y-auto bg-chatbox-dark">
-        <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-300">
+        <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-100">
           <ChatBox
             text={
               "Hello Claire, I am feeling a bit tired lately and feel weak in general. What do you recommend me to do?"
@@ -60,9 +60,12 @@ const AiArt: React.FC = () => {
     <>
       <div className="flex h-[18.75rem] justify-center align-middle">
         <div className="flex flex-col justify-center text-center">
-          {/* <img src="Claire.png" className="'h-[14.5rem] w-[11.875rem]" /> */}
-          <img src="Cain.png" className="'h-[14.5rem] w-[11.875rem]" />
-          <h3 className="text-2xl font-medium text-secondary">
+          <img
+            src="Claire2.png"
+            alt="Claire AI Art Made by CyanLolly"
+            className="'h-[14.5rem] w-[11.875rem] drop-shadow-[0rem_0.125rem_0.25rem_rgba(0,0,0,0.12)]"
+          />
+          <h3 className="text-2xl font-medium text-secondary drop-shadow-[0rem_0.125rem_0.25rem_rgba(0,0,0,0.25)]">
             Cl<span className="text-primary">ai</span>re
           </h3>
         </div>
@@ -74,16 +77,17 @@ const AiArt: React.FC = () => {
 const InputBox: React.FC = () => {
   return (
     <>
-      <form action="" className="flex items-center justify-center">
+      <form
+        action=""
+        className="mx-auto mt-5 flex h-[2.75rem] w-[50rem] items-center justify-center overflow-hidden rounded-2xl rounded-l-xl bg-[#5D5F70] px-4 align-middle drop-shadow-[0rem_0.25rem_0.25rem_rgba(0,0,0,0.25)]"
+      >
         <input
           type="text"
-          className="h-[2.75rem] w-[50rem] overflow-hidden rounded-l-2xl bg-[#5D5F70] pl-5 text-white shadow-xl focus:outline-none"
+          className="flex-1 bg-[#5D5F70] text-white focus:outline-none"
         />
-        <div className="flex h-[2.75rem] w-[2.5rem] items-center justify-start rounded-r-2xl bg-[#5D5F70]">
-          <button className="pr-3 text-center duration-300 hover:scale-110">
-            <i className="fa-regular fa-paper-plane fa-xl text-white"></i>
-          </button>
-        </div>
+        <button className=" bg-red-500fa-xl h-[100%] w-[2.5rem] text-center text-xl duration-300 hover:scale-110">
+          <i className="fa-regular fa-paper-plane text-white"></i>
+        </button>
       </form>
     </>
   );

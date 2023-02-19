@@ -16,7 +16,7 @@ export default function HtmlHead() {
       />
       <title>CuraAI</title>
       <meta name="description" content="A online doctor AI to chat with" />
-      <link rel="icon" href="Claire-256px.png" />
+      <link rel="icon" href="Claire2-256px.png" />
     </Head>
   );
 }
