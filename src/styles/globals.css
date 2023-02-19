@@ -8,7 +8,7 @@
   }
   #__next,
   body {
-    @apply h-[100vh] w-[100vw] overflow-y-auto bg-background scrollbar-thin scrollbar-thumb-slate-300 sm:text-[0.75rem];
+    @apply h-[100vh] w-[100vw] overflow-y-auto bg-background scrollbar-thin scrollbar-thumb-slate-300 sm:text-[0.75rem] lg:text-[1rem];
   }
   #__next {
     @apply flex flex-col;
