@@ -11,7 +11,7 @@ const Mainapp: NextPage = () => {
       <Navbar />
       <AiArt />
       <div className="flex flex-1 flex-col overflow-y-auto bg-chatbox-dark">
-        <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-300">
+        <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-100">
           <ChatBox
             text={
               "Hello Claire, I am feeling a bit tired lately and feel weak in general. What do you recommend me to do?"
@@ -60,8 +60,12 @@ const AiArt: React.FC = () => {
     <>
       <div className="flex h-[18.75rem] justify-center align-middle">
         <div className="flex flex-col justify-center text-center">
-          {/* <img src="Claire.png" className="'h-[14.5rem] w-[11.875rem]" /> */}
-          <img src="Cain.png" className="'h-[14.5rem] w-[11.875rem]" />
+          <img
+            src="Claire2.png"
+            alt="Claire AI Art Made by CyanLolly"
+            className="'h-[14.5rem] w-[11.875rem]"
+          />
+          {/* <img src="Cain.png" alt="Claire AI Art Made by CyanLolly" className="'h-[14.5rem] w-[11.875rem]" /> */}
           <h3 className="text-2xl font-medium text-secondary">
             Cl<span className="text-primary">ai</span>re
           </h3>
