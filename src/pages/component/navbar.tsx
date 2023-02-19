@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <>
       <header>
-        <nav className="mx-auto flex w-[90vw] items-center py-2 lg:w-[60vw]">
+        <nav className="mx-auto flex w-[90vw] items-center py-2 sm:w-[60vw]">
           <Link href="../" className="flex-1 text-2xl font-bold">
             Cura<span className="text-primary">AI</span>
           </Link>
