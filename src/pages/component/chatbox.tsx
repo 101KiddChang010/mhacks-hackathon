@@ -11,7 +11,7 @@ const ChatBox: React.FC<chatInputs> = (props) => {
           props?.name ? "bg-chatbox-dark py-4" : "bg-chatbox-light py-4"
         }
       >
-        <div className="mx-auto my-auto flex sm:w-[90vw] lg:w-[60vw]">
+        <div className="mx-auto my-auto flex w-[90vw] lg:w-[60vw]">
           <p className="w-[3.125rem] text-white">
             {props?.name ? props.name + ": " : null}
           </p>
