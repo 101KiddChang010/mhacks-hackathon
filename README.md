@@ -13,7 +13,7 @@
     <img src="./public/claireThumbnailv2.jpg" alt="Photo of website" width="700">
   </a>
 
-<h3 align="center">CuraAI</h3>
+<h2 align="center">CuraAI</h2>
 
   <p align="center">
     Your personalized AI medical assistant. Get accurate medical advice, quick diagnoses, and access to healthcare providers. Say goodbye to long wait times and hello to convenient healthcare assistance with Claire.
