@@ -17,14 +17,14 @@ const Home: NextPage = () => {
       <div className="my-0 mx-auto flex max-w-screen-lg flex-1 flex-col items-center justify-center">
         <div className="mt-[4rem] flex flex-col items-center justify-center">
           <h1 className="text-center text-3xl font-semibold sm:text-5xl">
-            Introducing Cl
+            Meet Cl
             <span className="text-primary">ai</span>re
           </h1>
           <p className="my-4 w-[90vw] text-center text-xs sm:text-2xl">
             Your personalized AI medical assistant. Get accurate medical advice,
-            quick diagnoses, and access to healthcare providers all in one
-            place. Say goodbye to long wait times and hello to convenient
-            healthcare management with Claire.
+            quick diagnoses, and access to healthcare providers. Say goodbye to
+            long wait times and hello to convenient healthcare assistance with
+            Claire.
           </p>
           <div className="flex gap-2">
             <Link
@@ -54,19 +54,17 @@ const Home: NextPage = () => {
           </div>
           <div className="mt-[4.688rem]">
             <h2 className="text-xl font-bold tracking-[.12rem] text-secondary sm:text-2xl">
-              WHAT IS CLAIRE
+              WHO IS CLAIRE
             </h2>
             <p className="mt-[.5rem] w-[90vw] text-sm font-medium max-sm:text-xs">
-              The innovative and intelligent solution to streamline your
-              healthcare needs. Claire is an AI designed to assist you with
-              personalized medical advice and connect you with the best
-              healthcare providers. With the latest cutting-edge technology and
-              advanced machine learning algorithms, our AI is capable of
-              analyzing medical data, identifying symptoms, and providing
-              accurate diagnoses. From to monitoring your health to scheduling
-              appointments, Claire is your one-stop shop for all your medical
-              needs. It’s a convenient and efficient way of managing your
-              healthcare.
+              Claire is an innovative medical assistant AI that uses the latest
+              breakthroughs in natural language processing and artificial
+              intelligence to help you take charge of your health. She's
+              designed to assist you with personalized medical advice and
+              connect you with the best healthcare providers. Whether you're
+              looking to manage a chronic condition or for simple medical
+              advice, Claire is your personalized medical assistant to achieving
+              optimal health and well-being.
             </p>
           </div>
           <div className="mt-[4.688rem]">
@@ -74,33 +72,17 @@ const Home: NextPage = () => {
               HOW CLAIRE WORKS
             </h2>
             <p className="mt-[.5rem] w-[90vw] text-sm font-medium max-sm:text-xs">
-              Claire is an innovative medical assistant AI that uses the latest
-              breakthroughs in natural language processing and artificial
-              intelligence to help people take charge of their health. Developed
-              with the state-of-the-art GPT-3 language model, Claire is able to
-              understand and respond to natural language queries in a way that
-              is both accurate and empathetic. Whether you have a specific
-              health concern or just need general guidance, Claire is here to
-              help you every step of the way. <br />
-              <br /> Claire's powerful capabilities are made possible by GPT-3's
-              advanced machine learning algorithms, which allow it to analyze
-              vast amounts of medical data and generate personalized responses
-              based on your individual needs. With Claire, you can get quick and
-              accurate medical advice, schedule appointments, and connect with
-              healthcare providers from the comfort of your own home. Whether
-              you're looking to manage a chronic condition or just want to stay
-              healthy, Claire is your partner in achieving optimal health and
-              well-being. <br />
-              <br />
-              One of the key benefits of Claire is its ability to adapt and
-              learn as it interacts with patients. As it receives more data and
-              feedback, Claire's responses become more accurate and
-              personalized. This means that over time, Claire can become an even
-              more effective medical assistant, providing patients with the most
-              up-to-date and relevant information. With its cutting-edge
-              technology and commitment to patient care, Claire is
-              revolutionizing the healthcare industry and transforming the way
-              people think about medical assistance.
+              Developed with OpenAI's GPT-3 language model, Claire's powerful
+              capabilities are made possible by GPT-3's advanced machine
+              learning algorithms. As she learns to adapt and interact by
+              receiving more data and feedback, her responses become more
+              accurate and personalized. Allowing her to analyze vast amounts of
+              medical data and create personalized responses based on you.
+              Claire is able to understand and respond in such a way that is
+              accurate, realistic, and empathetic like a real human-being. With
+              her cutting-edge technology and commitment to patient care, Claire
+              is revolutionizing the healthcare industry by making medical
+              assistance easily accessible through technology.
             </p>
           </div>
           <div className="mt-[4.688rem] mb-[3rem]">
