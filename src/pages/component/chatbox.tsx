@@ -12,8 +12,8 @@ export default function ChatBox(props: any) {
 const UserChat = (props: any) => {
   return (
     <>
-      <div className="flex h-20 items-center justify-center bg-chatbox-light">
-        <div className="flex w-[90vw] text-left">
+      <div className="h-20 bg-chatbox-light">
+        <div className="mx-auto flex sm:w-[90vw] lg:w-[60vw]">
           <p className="text-whitepr-5 w-[3.125rem]"></p>
           <p className="pl-5 text-white">
             Hello Claire, I am feeling a bit tired lately and feel weak in
@@ -28,8 +28,8 @@ const UserChat = (props: any) => {
 const AiChat = (props: any) => {
   return (
     <>
-      <div className="flex h-20 items-center justify-center">
-        <div className="flex w-[90vw] text-left">
+      <div className="mx-auto h-20">
+        <div className="mx-auto flex sm:w-[90vw] lg:w-[60vw]">
           <p className="w-[3.125rem] text-white ">Claire:</p>
           <p className="pl-5 text-white">
             I recommend that you get plenty of rest, stay hydrated, and eat a
