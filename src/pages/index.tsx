@@ -44,7 +44,7 @@ const Home: NextPage = () => {
             <img
               src="Claire2.png"
               alt="Claire AI Image"
-              className="absolute top-0 right-[50%] z-0 h-[11.375rem] translate-x-[50%] drop-shadow-[0rem_0.125rem_0.125rem_rgba(0,0,0,0.12)]"
+              className="absolute top-0 right-[50%] z-0 h-[11.375rem] translate-x-[50%] drop-shadow-[0rem_0.125rem_0.125rem_rgba(0,0,0,0.12)] duration-200 hover:translate-y-[-0.5rem]"
             />
             <img
               src="showcase.jpg"
