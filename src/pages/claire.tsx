@@ -1,10 +1,25 @@
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 import { type NextPage } from "next";
 import HtmlHead from "./component/htmlhead";
 import Navbar from "./component/navbar";
 import ChatBox from "./component/chatbox";
 import Footer from "./component/footer";
 
-const Mainapp: NextPage = () => {
+const Claire: NextPage = () => {
+  const { data: sessionData } = useSession();
+  const router = useRouter();
+
+  // Redirects user to Index Page if not logged in.
+  if (!sessionData?.user) {
+    // alert("You have to be logged in to access the AI");
+    // router.push("/");
+    router.push(
+      "http://localhost:3000/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F"
+    );
+    return null;
+  }
+
   return (
     <>
       <HtmlHead />
@@ -53,7 +68,7 @@ const Mainapp: NextPage = () => {
   );
 };
 
-export default Mainapp;
+export default Claire;
 
 const AiArt: React.FC = () => {
   return (
@@ -61,7 +76,7 @@ const AiArt: React.FC = () => {
       <div className="flex h-[18.75rem] justify-center align-middle">
         <div className="flex flex-col justify-center text-center">
           <img
-            src="Claire2.png"
+            src="claire-smile.png"
             alt="Claire AI Art Made by CyanLolly"
             className="'h-[14.5rem] w-[11.875rem] drop-shadow-[0rem_0.125rem_0.25rem_rgba(0,0,0,0.12)]"
           />

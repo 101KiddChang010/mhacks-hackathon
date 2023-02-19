@@ -28,7 +28,7 @@ const Home: NextPage = () => {
           </p>
           <div className="flex gap-2">
             <Link
-              href="../mainapp"
+              href="./claire"
               className="flex h-8 w-[6.5rem] items-center justify-center rounded-2xl bg-secondary py-5 text-center text-sm text-white duration-300 hover:scale-105"
             >
               <span>Get Started</span>
@@ -42,7 +42,7 @@ const Home: NextPage = () => {
           </div>
           <div className="relative my-8">
             <img
-              src="Claire2.png"
+              src="claire-talk.png"
               alt="Claire AI Image"
               className="absolute top-0 right-[50%] z-0 h-[11.375rem] translate-x-[50%] drop-shadow-[0rem_0.125rem_0.125rem_rgba(0,0,0,0.12)] duration-200 hover:translate-y-[-0.5rem]"
             />
