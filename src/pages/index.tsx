@@ -40,16 +40,16 @@ const Home: NextPage = () => {
               <span>GitHub Repo</span>
             </a>
           </div>
-          <div className="my-8 bg-red-500">
+          <div className="relative my-8">
             <img
               src="Claire2.png"
-              alt=""
-              className="relative top-0 right-0 z-0 h-[11.375rem]"
+              alt="Claire AI Image"
+              className="absolute top-0 right-[50%] z-0 h-[11.375rem] translate-x-[50%] drop-shadow-[0rem_0.125rem_0.125rem_rgba(0,0,0,0.12)]"
             />
             <img
               src="showcase.jpg"
-              alt=""
-              className="relative z-[1] w-[48.75rem]"
+              alt="Image showcasing interaction with Claire"
+              className="relative z-[1] mt-[10rem] w-[48.75rem] shadow-2xl"
             />
           </div>
           <div className="mt-[4.688rem]">
