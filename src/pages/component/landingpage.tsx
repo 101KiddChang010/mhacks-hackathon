@@ -82,11 +82,11 @@ export default function LandingPage() {
           <h3 className="flex justify-center text-2xl font-bold text-[#474750]">
             Powered By:
           </h3>
-          <div className="mt-5 flex gap-[5.313rem]">
+          <div className="mt-5 flex gap-4 lg:justify-between lg:gap-[5.313rem]">
             <a href="https://openai.com">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
-                className="max-h-[4.375rem]"
+                className="h-[3.25em] w-auto lg:h-[4.375em]"
                 alt=""
               />
             </a>
@@ -94,27 +94,27 @@ export default function LandingPage() {
               <img
                 src="https://next-auth.js.org/img/logo/logo-sm.png"
                 alt=""
-                className="max-h-[4.375rem]"
+                className="h-[3.25em] w-auto lg:h-[4.375em]"
               />
             </a>
             <a href="https://nextjs.org">
               <img
                 src="https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png"
-                className="max-h-[4.375rem]"
+                className="h-[3.25em] w-auto lg:h-[4.375em]"
                 alt=""
               />
             </a>
             <a href="https://reactjs.org">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
-                className="max-h-[4.375rem]"
+                className="h-[3.25em] w-auto lg:h-[4.375em]"
                 alt=""
               />
             </a>
             <a href="https://www.mongodb.com">
               <img
                 src="https://www.svgrepo.com/show/331488/mongodb.svg"
-                className="max-h-[4.375rem]"
+                className="h-[3.25em] w-auto lg:h-[4.375em]"
                 alt=""
               />
             </a>
