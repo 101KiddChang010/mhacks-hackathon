@@ -17,7 +17,7 @@ const Claire: NextPage = () => {
   async function onSubmit(event: any) {
     event.preventDefault();
     setClaireImg((prev) =>
-      Math.floor(Math.random()) == 0 ? "claire-note.png" : "claire-thinking.png"
+      Math.random() >= 0.5 ? "claire-note.png" : "claire-thinking.png"
     );
     setPreviousResponses((prev) => [...prev, "Human: " + userInput]);
     try {
@@ -49,31 +49,32 @@ const Claire: NextPage = () => {
     } catch (error: any) {
       // console.error(error);
       // alert(error.message);
+      setClaireImg((prev) => "claire-oof.png");
     }
   }
 
-  // if (!sessionData?.user) {
-  //   return (
-  //     <>
-  //       <HtmlHead />
-  //       <Navbar />
-  //       <div className="align-center absolute top-[50%] right-[50%] flex translate-x-[50%] translate-y-[-50%] flex-col items-center justify-center">
-  //         <img
-  //           src="/claire-oof.png"
-  //           className="max-h-[18rem] max-w-[11.875rem]"
-  //         ></img>
-  //         <div className="flex flex-col">
-  //           <h2 className="flex items-center justify-center text-center text-[4rem] font-bold text-primary lg:text-[6rem]">
-  //             Sorry!
-  //           </h2>
-  //           <h2 className="flex items-center justify-center text-center font-bold text-secondary sm:text-lg lg:text-xl">
-  //             To Access Claire You First Have To Log In.
-  //           </h2>
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // }
+  if (!sessionData?.user) {
+    return (
+      <>
+        <HtmlHead />
+        <Navbar />
+        <div className="align-center absolute top-[50%] right-[50%] flex translate-x-[50%] translate-y-[-50%] flex-col items-center justify-center">
+          <img
+            src="/claire-oof.png"
+            className="max-h-[18rem] max-w-[11.875rem]"
+          ></img>
+          <div className="flex flex-col">
+            <h2 className="flex items-center justify-center text-center text-[4rem] font-bold text-primary lg:text-[6rem]">
+              Sorry!
+            </h2>
+            <h2 className="flex items-center justify-center text-center font-bold text-secondary sm:text-lg lg:text-xl">
+              To Access Claire You First Have To Log In.
+            </h2>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
