@@ -12,9 +12,13 @@ const Claire: NextPage = () => {
   const [userInput, setUserInput] = useState("");
   const [result, setResult] = useState("");
   const [previousResponses, setPreviousResponses] = useState<string[]>([]);
+  const [claireImg, setClaireImg] = useState("claire-smile.png");
 
   async function onSubmit(event: any) {
     event.preventDefault();
+    setClaireImg((prev) =>
+      Math.floor(Math.random()) == 0 ? "claire-note.png" : "claire-thinking.png"
+    );
     setPreviousResponses((prev) => [...prev, "Human: " + userInput]);
     try {
       const response = await fetch("/api/generate", {
@@ -34,6 +38,8 @@ const Claire: NextPage = () => {
           data.error ||
           new Error(`Request failed with status ${response.status}`)
         );
+      } else {
+        setClaireImg((prev) => "claire-talk.png");
       }
 
       console.log("prevResponses", previousResponses);
@@ -46,34 +52,34 @@ const Claire: NextPage = () => {
     }
   }
 
-  if (!sessionData?.user) {
-    return (
-      <>
-        <HtmlHead />
-        <Navbar />
-        <div className="align-center absolute top-[50%] right-[50%] flex translate-x-[50%] translate-y-[-50%] flex-col items-center justify-center">
-          <img
-            src="/claire-oof.png"
-            className="max-h-[18rem] max-w-[11.875rem]"
-          ></img>
-          <div className="flex flex-col">
-            <h2 className="flex items-center justify-center text-center text-[4rem] font-bold text-primary lg:text-[6rem]">
-              Sorry!
-            </h2>
-            <h2 className="flex items-center justify-center text-center font-bold text-secondary sm:text-lg lg:text-xl">
-              To Access Claire You First Have To Log In.
-            </h2>
-          </div>
-        </div>
-      </>
-    );
-  }
+  // if (!sessionData?.user) {
+  //   return (
+  //     <>
+  //       <HtmlHead />
+  //       <Navbar />
+  //       <div className="align-center absolute top-[50%] right-[50%] flex translate-x-[50%] translate-y-[-50%] flex-col items-center justify-center">
+  //         <img
+  //           src="/claire-oof.png"
+  //           className="max-h-[18rem] max-w-[11.875rem]"
+  //         ></img>
+  //         <div className="flex flex-col">
+  //           <h2 className="flex items-center justify-center text-center text-[4rem] font-bold text-primary lg:text-[6rem]">
+  //             Sorry!
+  //           </h2>
+  //           <h2 className="flex items-center justify-center text-center font-bold text-secondary sm:text-lg lg:text-xl">
+  //             To Access Claire You First Have To Log In.
+  //           </h2>
+  //         </div>
+  //       </div>
+  //     </>
+  //   );
+  // }
 
   return (
     <>
       <HtmlHead />
       <Navbar />
-      <AiArt />
+      <AiArt src={claireImg} />
       <div className="flex flex-1 flex-col overflow-y-auto bg-chatbox-dark">
         <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-100">
           {previousResponses.map((text) => (
@@ -91,7 +97,11 @@ const Claire: NextPage = () => {
         >
           <input
             value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
+            onChange={(e) => {
+              setUserInput(e.target.value);
+              if (claireImg != "claire-smile.png")
+                setClaireImg((prev) => "claire-smile.png");
+            }}
             type="text"
             className="flex-1 bg-[#5D5F70] text-white focus:outline-none"
           />
@@ -111,13 +121,18 @@ const Claire: NextPage = () => {
 
 export default Claire;
 
-const AiArt: React.FC = () => {
+interface prop {
+  src: string;
+}
+
+const AiArt: React.FC<prop> = (prop) => {
   return (
     <>
       <div className="flex justify-center py-1 align-middle">
         <div className="flex flex-col justify-center text-center">
           <img
-            src="claire-smile.png"
+            // src="claire-smile.png"
+            src={prop.src ? prop.src : ""}
             alt="Claire AI Art Made by CyanLolly"
             className="h-[10rem] w-auto drop-shadow-[0rem_0.125rem_0.25rem_rgba(0,0,0,0.12)] sm:h-[13.125rem]"
           />
