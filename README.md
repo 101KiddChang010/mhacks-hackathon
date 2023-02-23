@@ -13,7 +13,7 @@
     <img src="./public/claireThumbnailv2.jpg" alt="Photo of website" width="700">
   </a>
 
-<h2 align="center">CuraAI</h2>
+<h2 align="center">Introducing Claire</h2>
 
   <p align="center">
     Your personalized AI medical assistant. Get accurate medical advice, quick diagnoses, and access to healthcare providers. Say goodbye to long wait times and hello to convenient healthcare assistance with Claire.
@@ -33,9 +33,11 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
+    <!--
     <li>
         <a href="#introducing-claire">Introducing Claire</a>
     </li>
+     -->
     <li>
         <a href="#how-claire-works">How Claire Works</a>
     </li>
@@ -65,10 +67,12 @@
   </ol>
 </details>
 
+<!--
 ## Introducing Claire
 
 Your personalized AI medical assistant. Get accurate medical advice, quick diagnoses, and access to healthcare providers all in one place. Say goodbye to long wait times and hello to convenient healthcare management with Claire.
-
+ -->
+ 
 ## How Claire Works
 
 Claire is an innovative medical assistant AI that uses advanced natural language processing and artificial intelligence to help people manage their health. Developed with the state-of-the-art GPT-3 language model, Claire can understand and respond to natural language queries in a personalized and empathetic way. It can provide quick and accurate medical advice, schedule appointments, and connect patients with healthcare providers around the globe. With the ability to learn and adapt over time, Claire can become even more effective in providing patients with the most up-to-date and relevant information.
