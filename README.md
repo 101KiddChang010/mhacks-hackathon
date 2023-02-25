@@ -5,6 +5,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![GNU License][license-shield]][license-url]
+[![DevPost][devpost-shield]][devpost-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -242,3 +243,5 @@ Bryan Lor - [@github](https://github.com/bryan-lor)
 [license-shield]: https://img.shields.io/github/license/101KiddChang010/mhacks-hackathon.svg?style=for-the-badge
 [license-url]: https://github.com/101KiddChang010/mhacks-hackathon/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[devpost-shield]: https://img.shields.io/badge/Devpost-003E54?style=for-the-badge&logo=Devpost&logoColor=white
+[devpost-url]: https://devpost.com/software/curaai
