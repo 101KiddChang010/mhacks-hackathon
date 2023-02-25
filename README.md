@@ -36,6 +36,9 @@
   <ol>
     <!--
     <li>
+        <a href="video-demo">Video Demo</a>
+    </li>
+    <li>
         <a href="#introducing-claire">Introducing Claire</a>
     </li>
      -->
@@ -69,10 +72,14 @@
 </details>
 
 <!--
+
 ## Introducing Claire
 
 Your personalized AI medical assistant. Get accurate medical advice, quick diagnoses, and access to healthcare providers all in one place. Say goodbye to long wait times and hello to convenient healthcare management with Claire.
  -->
+ 
+ ## Video Demo
+[![CuraAI - Introducing Claire](https://res.cloudinary.com/marcomontalbano/image/upload/v1677307241/video_to_markdown/images/youtube--Jmawd9gwcWg-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=Jmawd9gwcWg "CuraAI - Introducing Claire")
  
 ## How Claire Works
 
