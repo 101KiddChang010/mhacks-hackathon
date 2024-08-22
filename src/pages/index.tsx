@@ -106,7 +106,7 @@ const Home: NextPage = () => {
               </a>
               <a href="https://nextjs.org">
                 <img
-                  src="https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png"
+                  src="https://www.drupal.org/files/project-images/nextjs-icon-dark-background.png"
                   className="max-h-[4.375rem] w-auto duration-300 hover:scale-110 md:h-[25rem]"
                   alt=""
                 />
